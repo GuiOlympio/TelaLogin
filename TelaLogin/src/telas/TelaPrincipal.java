@@ -103,6 +103,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user_add.png"))); // NOI18N
         jMenuItem6.setText("Cadastrar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user_edit.png"))); // NOI18N
@@ -150,6 +155,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDeskPane1.add(cadastro);
         cadastro.show(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        TelaCadastro cadastroCliente = new TelaCadastroCliente();
+        jDeskPane1.add(cadastroCliente);
+        cadastroCliente.show(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments

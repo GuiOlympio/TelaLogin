@@ -26,6 +26,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDeskPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -43,8 +44,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout jDeskPane1Layout = new javax.swing.GroupLayout(jDeskPane1);
+        jDeskPane1.setLayout(jDeskPane1Layout);
+        jDeskPane1Layout.setHorizontalGroup(
+            jDeskPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 581, Short.MAX_VALUE)
+        );
+        jDeskPane1Layout.setVerticalGroup(
+            jDeskPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 353, Short.MAX_VALUE)
+        );
+
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/page.png"))); // NOI18N
         jMenu1.setText("Arquivo");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/door_out.png"))); // NOI18N
         jMenuItem1.setText("Sair");
@@ -59,9 +72,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user.png"))); // NOI18N
         jMenu2.setText("Usuario");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user_add.png"))); // NOI18N
         jMenuItem2.setText("Cadastrar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user_edit.png"))); // NOI18N
@@ -80,6 +99,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/group.png"))); // NOI18N
         jMenu3.setText("Clientes");
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/user_add.png"))); // NOI18N
         jMenuItem6.setText("Cadastrar");
@@ -101,6 +121,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Pacote de Icones/icons 1/information.png"))); // NOI18N
         jMenu4.setText("Sobre");
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -109,11 +130,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 489, Short.MAX_VALUE)
+            .addComponent(jDeskPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+            .addComponent(jDeskPane1)
         );
 
         pack();
@@ -122,6 +143,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        TelaCadastro cadastro = new TelaCadastro();
+        jDeskPane1.add(cadastro);
+        cadastro.show(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +187,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDeskPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

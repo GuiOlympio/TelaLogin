@@ -157,7 +157,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        TelaCadastro cadastroCliente = new TelaCadastroCliente();
+        TelaCadastro cadastroCliente = new TelaCadastro();
         jDeskPane1.add(cadastroCliente);
         cadastroCliente.show(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -191,6 +191,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaPrincipal().setVisible(true);
             }

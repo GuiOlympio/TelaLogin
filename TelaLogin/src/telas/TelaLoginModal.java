@@ -4,6 +4,7 @@
  */
 package telas;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,10 @@ public class TelaLoginModal extends javax.swing.JDialog {
     
     public String login;
     public String senha;
+    public boolean checkLogin(String login, String senha){
+        return login.equals("Marco") && senha.equals("1234");
+    }
+    
     
             
             
@@ -59,11 +64,21 @@ public class TelaLoginModal extends javax.swing.JDialog {
         });
 
         txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         btnEntrar.setText("Entrar");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
+            }
+        });
+        btnEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnEntrarKeyPressed(evt);
             }
         });
 
@@ -133,10 +148,8 @@ public class TelaLoginModal extends javax.swing.JDialog {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
-        if (txtLogin.getText().equals("Rita") && txtSenha.getText().equals("GabiGui") ){
-            login = txtLogin.getText();
-            senha = txtSenha.getText();
-            
+        if (this.checkLogin(txtLogin.getText(), new String (txtSenha.getPassword()))){
+            JOptionPane.showMessageDialog(null, "Bem vindo!" + txtLogin.getText());
             this.dispose();
         }else {
             JOptionPane.showMessageDialog(null, "Dados informados estão incorretos");
@@ -147,6 +160,30 @@ public class TelaLoginModal extends javax.swing.JDialog {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (this.checkLogin(txtLogin.getText(), new String (txtSenha.getPassword()))){
+                JOptionPane.showMessageDialog(null, "Bem vindo! " + txtLogin.getText());
+                this.dispose();
+            }else {
+                JOptionPane.showMessageDialog(null, "Dados informados estão incorretos");
+            }
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (this.checkLogin(txtLogin.getText(), new String (txtSenha.getPassword()))){
+                JOptionPane.showMessageDialog(null, "Bem vindo! " + txtLogin.getText());
+                this.dispose();
+            }else {
+                JOptionPane.showMessageDialog(null, "Dados informados estão incorretos");
+            }
+        }
+    }//GEN-LAST:event_btnEntrarKeyPressed
 
     /**
      * @param args the command line arguments

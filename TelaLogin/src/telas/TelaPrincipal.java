@@ -10,6 +10,8 @@ package telas;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Creates new form TelaPrincipal
      */

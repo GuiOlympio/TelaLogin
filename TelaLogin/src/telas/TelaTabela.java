@@ -6,6 +6,7 @@ package telas;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -20,6 +21,10 @@ public class TelaTabela extends javax.swing.JFrame {
      */
     public TelaTabela() {
         initComponents();
+        
+        DefaultTableModel modelo = (DefaultTableModel) jTProdutos.getModel();
+        jTProdutos.setRowSorter(new TableRowSorter(modelo));
+        
     }
 
     /**
